@@ -143,7 +143,7 @@
 :root[data-theme='dark'] .btn-primary {
   background: var(--primary);
   border-color: transparent;
-  color: #08111f;
+  color: #ffffff;
 }
 
 :root[data-theme='dark'] .btn-danger {
@@ -237,8 +237,7 @@
 html,
 body,
 #root {
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--panel-soft) 78%, var(--bg-accent)) 0%, var(--bg-accent) 100%);
+  background: var(--bg-accent);
 }
 
 body {
@@ -256,10 +255,10 @@ h4 {
 .topbar {
   height: 56px;
   padding-inline: 16px;
-  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  background: color-mix(in srgb, var(--panel-soft) 86%, transparent);
   border-color: var(--line-soft);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 .brand {
@@ -300,12 +299,12 @@ h4 {
 
 .app-main {
   grid-template-columns: 240px minmax(0, 1fr);
-  background: var(--panel-soft);
+  background: var(--bg-accent);
 }
 
 .app-side {
   padding: 12px;
-  background: var(--panel);
+  background: var(--panel-soft);
   border-color: var(--line-soft);
 }
 
@@ -991,7 +990,7 @@ textarea {
 }
 
 :root[data-theme='dark'] .btn-primary {
-  color: #08111f;
+  color: #ffffff;
 }
 
 @media (max-width: 1180px) {

@@ -21,8 +21,8 @@
 .input {
   @apply h-12 w-full rounded-xl border px-3.5 py-2.5 outline-none;
   background: var(--panel);
-  border-color: rgba(74, 103, 150, 0.34);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82);
+  border-color: var(--line);
+  box-shadow: none;
   transition: all var(--dur-fast) var(--ease-smooth);
   font-size: var(--font-base);
   line-height: var(--leading-snug);
@@ -45,14 +45,14 @@ input[type='file'].input {
 
 input[type='file'].input::file-selector-button {
   @apply mr-2.5 h-8 cursor-pointer rounded-full border px-3 font-bold;
-  background: #eef4ff;
-  border-color: #9db8ea;
-  color: #1f4ea0;
+  background: #eaf2ff;
+  border-color: #aec6ff;
+  color: #277af7;
 }
 
 input[type='file'].input::file-selector-button:hover {
-  background: #dfeaff;
-  border-color: #2f5fd8;
+  background: #eaf2ff;
+  border-color: #3482ff;
 }
 
 .textarea {
@@ -61,17 +61,17 @@ input[type='file'].input::file-selector-button:hover {
 
 .input:focus {
   border-color: var(--primary);
-  background-color: #fbfdff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12), 0 8px 20px rgba(37, 99, 235, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.95);
-  transform: translateY(-1px);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(52, 130, 255, 0.14);
+  transform: none;
 }
 
 .input-readonly {
-  @apply bg-slate-100 text-slate-600;
+  @apply bg-panel-muted text-muted;
 }
 
 .input:disabled {
-  @apply cursor-not-allowed border-slate-300 bg-slate-200 text-slate-400;
+  @apply cursor-not-allowed border-line bg-panel-muted text-muted;
 }
 
 .password-wrap {
@@ -91,27 +91,27 @@ input[type='file'].input::file-selector-button:hover {
 }
 
 .input-icon-btn {
-  @apply absolute right-2 top-1/2 grid h-8 w-8 cursor-pointer place-items-center rounded-full border-0 bg-transparent text-slate-700 transition;
+  @apply absolute right-2 top-1/2 grid h-8 w-8 cursor-pointer place-items-center rounded-full border-0 bg-transparent text-muted-strong transition;
   transform: translateY(-50%);
 }
 
 .input-icon-btn:hover:not(:disabled) {
   color: var(--primary);
-  background: rgba(37, 99, 235, 0.08);
+  background: rgba(52, 130, 255, 0.08);
   transform: translateY(-50%) scale(1.04);
 }
 
 .input-icon-btn:disabled {
-  @apply cursor-not-allowed text-slate-400;
+  @apply cursor-not-allowed text-muted;
 }
 
 .password-toggle {
-  @apply absolute right-2 top-1/2 grid cursor-pointer place-items-center border-0 bg-transparent text-blue-700 transition;
+  @apply absolute right-2 top-1/2 grid cursor-pointer place-items-center border-0 bg-transparent text-brand transition;
   transform: translateY(-50%);
 }
 
 .eye-btn {
-  @apply absolute right-2.5 top-1/2 grid h-8 w-8 cursor-pointer place-items-center border-0 bg-transparent text-slate-700 transition;
+  @apply absolute right-2.5 top-1/2 grid h-8 w-8 cursor-pointer place-items-center border-0 bg-transparent text-muted-strong transition;
   transform: translateY(-50%);
 }
 
@@ -184,46 +184,34 @@ input[type='file'].input::file-selector-button:hover {
 
 .btn-primary {
   @apply text-white;
-  background: linear-gradient(135deg, #2563eb 0%, #1e40af 100%);
-  border: 1px solid rgba(37, 99, 235, 0.4);
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: var(--primary);
+  border: 1px solid transparent;
+  box-shadow: 0 4px 14px rgba(52, 130, 255, 0.25);
   position: relative;
   overflow: hidden;
 }
 
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity var(--dur-fast) var(--ease-smooth);
-}
-
 .btn-primary:hover {
-  background: linear-gradient(135deg, #1d4ed8 0%, #1e3a8a 100%);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
-  transform: translateY(-2px);
-}
-
-.btn-primary:hover::before {
-  opacity: 1;
+  background: var(--primary-hover);
+  box-shadow: 0 6px 18px rgba(52, 130, 255, 0.30);
+  transform: translateY(-1px);
 }
 
 .btn-primary:active:not(:disabled) {
+  background: var(--primary-strong);
   transform: translateY(0) scale(0.98);
 }
 
 .btn-secondary {
   @apply bg-panel text-brand-strong;
-  border: 1px solid rgba(37, 99, 235, 0.22);
-  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-secondary:hover {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  border-color: rgba(37, 99, 235, 0.40);
-  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.15), inset 0 1px 0 rgba(255, 255, 255, 1);
+  background: var(--panel-soft);
+  border-color: color-mix(in srgb, var(--primary) 40%, var(--line));
+  box-shadow: var(--shadow-sm);
 }
 
 .btn-danger {
@@ -237,7 +225,7 @@ input[type='file'].input::file-selector-button:hover {
 }
 
 .btn:disabled {
-  @apply cursor-not-allowed border-slate-300 bg-slate-200 text-slate-400;
+  @apply cursor-not-allowed border-line bg-panel-muted text-muted;
 }
 
 .or {

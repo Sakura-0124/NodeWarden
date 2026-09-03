@@ -1,67 +1,91 @@
+/* ═══════════════════════════════════════════
+   NodeWarden — MIUIX Design Tokens
+   Values ported from Miuix (Xiaomi HyperOS) Colors.kt
+   lightColorScheme() / darkColorScheme()
+   ═══════════════════════════════════════════ */
 :root {
-  --bg-accent: #f3f6f9;
-  --panel: #ffffff;
-  --panel-soft: #f8fafc;
-  --panel-muted: #edf2f7;
-  --panel-subtle: #fbfcfe;
+  /* ── Page / surfaces (MIUIX 5-level surface) ── */
+  --bg-accent: #ffffff;            /* 页面背景 background = White */
+  --panel: #ffffff;                /* 卡片 surfaceContainer = White */
+  --panel-soft: #f7f7f7;           /* 导航/侧边栏 surface = 0xFFF7F7F7 */
+  --panel-muted: #f0f0f0;          /* 输入框/悬浮 surfaceContainerHigh */
+  --panel-subtle: #f7f7f7;         /* hover 层 */
   --surface: #ffffff;
-  --line: rgba(100, 116, 139, 0.24);
-  --line-soft: rgba(100, 116, 139, 0.14);
-  --text: #0f172a;
-  --text-muted: #64748b;
-  --muted: #64748b;
-  --muted-strong: #334155;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --primary-strong: #1e40af;
+
+  /* ── Lines / dividers ── */
+  --line: #d9d9d9;                 /* outline = 0xFFD9D9D9 */
+  --line-soft: #e0e0e0;            /* dividerLine = 0xFFE0E0E0 */
+
+  /* ── Text ── */
+  --text: #000000;                 /* onSurface = Black */
+  --text-muted: rgba(0, 0, 0, 0.6);  /* onSurfaceVariantSummary 0x99000000 */
+  --muted: #959595;                /* onSurfaceContainerVariant */
+  --muted-strong: #4d4d4d;         /* secondary body */
+
+  /* ── Primary — Miuix lightColorScheme primary = Color(0xFF3482FF) ── */
+  --primary: #3482ff;
+  --primary-hover: #5d9bff;
+  --primary-strong: #277af7;
   --brand: var(--primary);
   --brand-strong: var(--primary-strong);
-  --accent: #0d9488;
-  --accent-soft: #e6f6f3;
-  --danger: #dc2626;
-  --success: #059669;
-  --warning: #d97706;
-  --overlay-strong: rgba(15, 23, 42, 0.62);
-  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -1px rgba(15, 23, 42, 0.05);
-  --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.10), 0 10px 10px -5px rgba(15, 23, 42, 0.04);
-  --shadow-xl: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
-  --shadow-glow: 0 0 20px rgba(37, 99, 235, 0.15), 0 8px 24px rgba(37, 99, 235, 0.12);
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 10px;
-  --radius-xl: 14px;
-  --radius-2xl: 18px;
-  --ease-out-strong: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-out-soft: cubic-bezier(0.24, 0.8, 0.32, 1);
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ── Accent (info) ── */
+  --accent: #3482ff;
+  --accent-soft: #eaf2ff;          /* tertiaryContainer */
+
+  /* ── Semantic ── */
+  --danger: #e94634;               /* error = Color(0xFFE94634) */
+  --success: #34d399;              /* green */
+  --warning: #fbbf24;              /* amber */
+
+  --overlay-strong: rgba(0, 0, 0, 0.3); /* windowDimming */
+
+  /* ── Shadows — MIUIX multi-layer soft shadows ── */
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.10);
+  --shadow-glow: 0 0 0 1px rgba(52, 130, 255, 0.06), 0 2px 12px rgba(52, 130, 255, 0.08);
+
+  /* ── Radius (MIUIX smooth corner — 16dp default) ── */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+
+  /* ── Motion (MIUIX spring + ease) ── */
+  --ease-out-strong: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-  --dur-instant: 80ms;
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --dur-instant: 100ms;
   --dur-quick: 120ms;
-  --dur-fast: 180ms;
-  --dur-medium: 240ms;
-  --dur-panel: 280ms;
-  --dur-slow: 350ms;
+  --dur-fast: 200ms;
+  --dur-medium: 320ms;
+  --dur-panel: 320ms;
+  --dur-slow: 500ms;
   --actions-gap: clamp(5px, calc((100vw - 520px) * 1), 10px);
 
-  /* Typography Families */
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei UI', 'Microsoft YaHei',
-    'Noto Sans CJK SC', 'Noto Sans SC', Arial, sans-serif;
+  /* Typography Families — MiSans first */
+  --font-sans: 'MiSans', 'Mi Sans', 'HarmonyOS Sans SC', 'PingFang SC', 'Hiragino Sans GB',
+    'Microsoft YaHei UI', 'Microsoft YaHei', 'Noto Sans CJK SC', 'Noto Sans SC', -apple-system,
+    BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
   --font-mono: 'SFMono-Regular', 'Cascadia Code', 'Cascadia Mono', Consolas, 'Liberation Mono', monospace;
 
   /* Typography Scale */
   --font-xs: 11px;
-  --font-sm: 14px;
-  --font-base: 15px;
-  --font-md: 16px;
-  --font-lg: 17px;
-  --font-xl: 19px;
-  --font-2xl: 21px;
-  --font-3xl: 25px;
-  --font-4xl: 29px;
+  --font-sm: 13px;
+  --font-base: 14px;
+  --font-md: 15px;
+  --font-lg: 16px;
+  --font-xl: 18px;
+  --font-2xl: 20px;
+  --font-3xl: 24px;
+  --font-4xl: 28px;
 
   /* Line Heights */
   --leading-tight: 1.25;
@@ -88,33 +112,43 @@
   --space-10: 40px;
 }
 
+/* ═══════════════════════════════════════════
+   DARK MODE — Miuix darkColorScheme()
+   ═══════════════════════════════════════════ */
 :root[data-theme='dark'] {
-  --bg-accent: #0a0e13;
-  --panel: #151b24;
-  --panel-soft: #111720;
-  --panel-muted: #0d1219;
-  --panel-subtle: #1a2230;
-  --surface: #151b24;
-  --line: rgba(148, 163, 184, 0.16);
-  --line-soft: rgba(148, 163, 184, 0.09);
-  --text: #f1f5f9;
-  --text-muted: #94a3b8;
-  --muted: #94a3b8;
-  --muted-strong: #cbd5e1;
-  --primary: #60a5fa;
-  --primary-hover: #93c5fd;
-  --primary-strong: #bfdbfe;
+  --bg-accent: #161616;            /* 页面背景 */
+  --panel: #1c1c1c;                /* 卡片 */
+  --panel-soft: #0c0c0c;           /* 导航/侧边栏（比 bg 深） */
+  --panel-muted: #242424;          /* 输入框/浮层 */
+  --panel-subtle: #242424;         /* hover 层 */
+  --surface: #1c1c1c;
+
+  --line: #484848;
+  --line-soft: #404040;
+
+  --text: #f2f2f2;
+  --text-muted: rgba(255, 255, 255, 0.5);
+  --muted: #737373;
+  --muted-strong: #a6a6a6;
+
+  --primary: #277af7;              /* darkColorScheme primary = Color(0xFF277AF7) */
+  --primary-hover: #338fe4;
+  --primary-strong: #99c7f1;
   --brand: var(--primary);
   --brand-strong: var(--primary-strong);
-  --accent: #2dd4bf;
-  --accent-soft: rgba(45, 212, 191, 0.12);
-  --danger: #f87171;
+
+  --accent: #4788ff;
+  --accent-soft: #2b3b54;
+
+  --danger: #f12522;
   --success: #34d399;
   --warning: #fbbf24;
-  --overlay-strong: rgba(0, 0, 0, 0.75);
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.45), 0 2px 4px -1px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.50), 0 10px 10px -5px rgba(0, 0, 0, 0.40);
-  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.60);
-  --shadow-glow: 0 0 20px rgba(96, 165, 250, 0.20), 0 8px 24px rgba(96, 165, 250, 0.15);
+
+  --overlay-strong: rgba(0, 0, 0, 0.6);
+
+  --shadow-sm: 0 1px 4px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.45);
+  --shadow-xl: 0 12px 40px rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 0 0 1px rgba(39, 122, 247, 0.08), 0 2px 12px rgba(39, 122, 247, 0.06);
 }

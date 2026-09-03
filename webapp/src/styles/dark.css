@@ -154,7 +154,7 @@
 :root[data-theme='dark'] .totp-qr svg,
 :root[data-theme='dark'] .totp-qr img {
   background: #ffffff;
-  border-color: rgba(15, 23, 42, 0.12);
+  border-color: rgba(0, 0, 0, 0.12);
 }
 
 /* ── dark mode scrollbar ── */
@@ -175,9 +175,9 @@
 }
 
 :root[data-theme='dark'] .topbar {
-  background: rgba(17, 24, 39, 0.78);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: color-mix(in srgb, var(--panel-soft) 86%, transparent);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
 }
 
 :root[data-theme='dark'] .user-chip {
@@ -201,7 +201,7 @@
 }
 
 :root[data-theme='dark'] .list-item:hover {
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24), 0 0 0 1px rgba(139, 184, 255, 0.12);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24), 0 0 0 1px rgba(167, 205, 255, 0.12);
 }
 
 :root[data-theme='dark'] .list-item.duplicate-group-item {
@@ -221,7 +221,7 @@
 
 :root[data-theme='dark'] .card-brand-icon {
   color: var(--primary-strong);
-  background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+  background: var(--panel-muted);
   border-color: color-mix(in srgb, var(--primary) 30%, var(--line));
 }
 
@@ -231,13 +231,13 @@
 
 :root[data-theme='dark'] .card-brand-american-express {
   color: #fff;
-  background: #2563eb;
+  background: #3482ff;
 }
 
 :root[data-theme='dark'] .card-brand-mastercard,
 :root[data-theme='dark'] .card-brand-maestro,
 :root[data-theme='dark'] .card-brand-discover {
-  color: #f8fafc;
+  color: #f7f7f7;
 }
 
 :root[data-theme='dark'] .mobile-sidebar-sheet,

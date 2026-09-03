@@ -65,15 +65,19 @@ small {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 22%, transparent);
 }
 
-/* --- custom scrollbar --- */
+/* --- custom scrollbar (MIUIX thin, auto-hide) --- */
 * {
-  scrollbar-color: color-mix(in srgb, var(--muted) 34%, transparent) transparent;
+  scrollbar-color: transparent transparent;
   scrollbar-width: thin;
 }
 
+body:hover * {
+  scrollbar-color: var(--line) transparent;
+}
+
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 4px;
+  height: 4px;
 }
 
 ::-webkit-scrollbar-track {
@@ -82,15 +86,18 @@ small {
 
 ::-webkit-scrollbar-thumb {
   min-height: 44px;
-  border: 3px solid transparent;
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--muted) 30%, transparent);
-  background-clip: content-box;
+  border-radius: 2px;
+  background: var(--line);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+body:hover ::-webkit-scrollbar-thumb {
+  opacity: 1;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: color-mix(in srgb, var(--primary) 38%, var(--muted) 22%);
-  background-clip: content-box;
+  background: color-mix(in srgb, var(--primary) 40%, var(--line));
 }
 
 ::-webkit-scrollbar-corner {
